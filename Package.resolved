@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Commandy",
+        "repositoryURL": "https://github.com/atsushi130/Commandy",
+        "state": {
+          "branch": null,
+          "revision": "b0bf04fb080297c1c44737ae9a341ae505668f1f",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
