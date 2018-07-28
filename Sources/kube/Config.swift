@@ -10,11 +10,12 @@ import Commandy
 
 struct Config: Commandy.Command {
     static func run() throws {
-        let script = Script.gcloudProjects
-            | ScriptDefines.awk
-            | ScriptDefines.grepApiDeployment
-            | ScriptDefines.fzfTmuxForConfig
-            | ScriptDefines.gcloudChangeProject
+        let script = Script.builder
+            | "gcloud projects list"
+            | "awk 'NR > 1 {print $1}'"
+            | "grep api-deployment"
+            | "fzf-tmux --ansi --reverse --prompt='gcloud config set project '"
+            | "xargs -Iname gcloud config set project name && gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a"
         script.exec()
     }
 }
