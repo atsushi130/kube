@@ -10,11 +10,12 @@ import Commandy
 
 struct Log: Commandy.Command {
     static func run() throws {
-        let script = Script.kubectlGetPods
-            | ScriptDefines.awk
-            | ScriptDefines.grepApiDeployment
-            | ScriptDefines.fzfTmuxForLog
-            | ScriptDefines.kubectlLogs
+        let script = Script.builder
+            | "kubectl get pods"
+            | "awk 'NR > 1 {print $1}'"
+            | "grep api-deployment"
+            | "fzf-tmux --ansi --reverse --prompt='monitoring pods is '"
+            | "xargs -Ipods kubectl logs pods api -f"
         script.exec()
     }
 }
