@@ -10,6 +10,11 @@ import Commandy
 
 struct Login: Commandy.Command {
     static func run() throws {
-        print("kubectl get pods | awk 'NR > 1 {print $1}' | grep api-deployment | fzf-tmux --ansi --reverse --prompt='monitoring pods is ' | xargs -o -Ipods kubectl exec -it pods bash")
+        let script = Script.kubectlGetPods
+            | ScriptDefines.awk
+            | ScriptDefines.grepApiDeployment
+            | ScriptDefines.fzfTmuxForLogin
+            | ScriptDefines.kubectlExecForlogin
+        script.exec()
     }
 }
