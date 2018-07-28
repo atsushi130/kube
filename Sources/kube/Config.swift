@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import Commandy
+
+struct Config: Commandy.Command {
+    static func run() throws {
+        let script = Script.gcloudProjects
+            | ScriptDefines.awk
+            | ScriptDefines.grepApiDeployment
+            | ScriptDefines.fzfTmuxForConfig
+            | ScriptDefines.gcloudChangeProject
+        script.exec()
+    }
+}
