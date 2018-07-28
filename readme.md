@@ -9,9 +9,9 @@
 </p>
 
 ## Support
-- kubectl logs {incremental searched pods} api -f
-- kubectl exec -it {incremental searched pods} bash
-- gcloud config set project {incremental searched project} && - gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a
+- `kubectl logs {incremental searched pods} api -f`
+- `kubectl exec -it {incremental searched pods} bash`
+- `gcloud config set project {incremental searched project} && - gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a`
 
 ## License
 kube is available under the MIT license. See the [LICENSE file](https://github.com/atsushi130/kube/blob/master/license-mit).
