@@ -14,7 +14,7 @@ struct Login: Commandy.Command {
             | ScriptDefines.awk
             | ScriptDefines.grepApiDeployment
             | ScriptDefines.fzfTmuxForLogin
-            | ScriptDefines.kubectlExecForLogin
+            | ScriptDefines.kubectlBashLogin
         script.exec()
     }
 }
