@@ -8,7 +8,12 @@
 import Foundation
 
 extension Script {
+    
     static var kubectlGetPods: Script {
         return Script(ScriptDefines.kubectlGetPods)
+    }
+    
+    static var gcloudProjects: Script {
+        return Script(ScriptDefines.gcloudProjectsList)
     }
 }
