@@ -14,7 +14,7 @@ struct Log: Commandy.Command {
             | ScriptDefines.awk
             | ScriptDefines.grepApiDeployment
             | ScriptDefines.fzfTmuxForLog
-            | ScriptDefines.kubectlExecForLog
+            | ScriptDefines.kubectlLogs
         script.exec()
     }
 }
