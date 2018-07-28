@@ -9,7 +9,7 @@ import Foundation
 
 struct Script {
     
-    private let script: String
+    fileprivate let script: String
     
     init(_ script: String) {
         self.script = script
@@ -18,4 +18,9 @@ struct Script {
     func exec() {
         Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", self.script]).waitUntilExit()
     }
+}
+
+infix operator |
+func | (lhs: Script, rhs: String) -> Script {
+    return Script(lhs.script + "|" + rhs)
 }
