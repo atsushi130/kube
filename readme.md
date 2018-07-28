@@ -8,6 +8,12 @@
     <a href=".license-mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a> 
 </p>
 
+## Installation via Homebrew
+```
+❯ brew tap atsushi130/tap
+❯ brew install kube
+```
+
 ## Support
 - `kubectl logs {incremental searched pods} api -f`
 - `kubectl exec -it {incremental searched pods} bash`
