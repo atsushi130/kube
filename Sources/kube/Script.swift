@@ -14,4 +14,8 @@ struct Script {
     init(_ script: String) {
         self.script = script
     }
+    
+    func exec() {
+        Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", self.script]).waitUntilExit()
+    }
 }
