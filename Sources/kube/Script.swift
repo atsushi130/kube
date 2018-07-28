@@ -9,18 +9,29 @@ import Foundation
 
 struct Script {
     
-    fileprivate let script: String
+    fileprivate let script: String?
+    static var builder: Script {
+        return Script()
+    }
     
-    init(_ script: String) {
+    init(_ script: String? = nil) {
         self.script = script
     }
     
     func exec() {
-        Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", self.script]).waitUntilExit()
+        guard let script = self.script else { return }
+        Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", script]).waitUntilExit()
     }
 }
 
 infix operator |
 func | (lhs: Script, rhs: String) -> Script {
-    return Script(lhs.script + "|" + rhs)
+    guard let script = lhs.script else { return Script(rhs) }
+    return Script(script + "|" + rhs)
+}
+
+// infix operator &&
+func && (lhs: Script, rhs: String) -> Script {
+    guard let script = lhs.script else { return Script(rhs) }
+    return Script(script + "&&" + rhs)
 }
