@@ -9,7 +9,7 @@ enum Kube: String, Commandy.Cli {
     
     func run() throws {
         switch self {
-        case .login: print("login")
+        case .login: Login.run()
         }
     }
 }
