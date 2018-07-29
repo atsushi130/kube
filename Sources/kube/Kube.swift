@@ -7,8 +7,6 @@ enum Kube: String, Commandy.Cli {
     case log
     case config
     
-    static var allCases: [Kube] = [.login, .log, .config]
-    
     func run() throws {
         switch self {
         case .login:  try Login.run()
