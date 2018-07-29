@@ -21,7 +21,7 @@
 
 ```
 ❯ kube config
-// gcloud config set project {incremental searched project} && - gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a
+// gcloud config set project {incremental searched project} && gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a
 ```
 
 ## Installation via Homebrew
