@@ -8,16 +8,31 @@
     <a href=".license-mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a> 
 </p>
 
+## Support commands
+```
+❯ kube log
+// kubectl logs {incremental searched pods} api -f
+```
+
+```
+❯ kube login
+// kubectl exec -it {incremental searched pods} bash
+```
+
+```
+❯ kube config
+// gcloud config set project {incremental searched project} && - gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a
+```
+
 ## Installation via Homebrew
 ```
 ❯ brew tap atsushi130/tap
 ❯ brew install kube
 ```
 
-## Support
-- `kubectl logs {incremental searched pods} api -f`
-- `kubectl exec -it {incremental searched pods} bash`
-- `gcloud config set project {incremental searched project} && - gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a`
+
+## Using Library
+- [Commandy](https://github.com/atsushi130/Commandy)
 
 ## License
 kube is available under the MIT license. See the [LICENSE file](https://github.com/atsushi130/kube/blob/master/license-mit).
