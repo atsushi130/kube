@@ -34,5 +34,11 @@
 ## Using Library
 - [Commandy](https://github.com/atsushi130/Commandy)
 
+## Required
+- gcloud
+- kubectl
+- fzf
+- tmux
+
 ## License
 kube is available under the MIT license. See the [LICENSE file](https://github.com/atsushi130/kube/blob/master/license-mit).
