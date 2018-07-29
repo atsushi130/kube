@@ -14,8 +14,8 @@ struct Log: Commandy.Command {
             | "kubectl get pods"
             | "awk 'NR > 1 {print $1}'"
             | "grep api-deployment"
-            | "fzf-tmux --ansi --reverse --prompt='monitoring pods is '"
-            | "xargs -Ipods kubectl logs pods api -f"
+            | "fzf-tmux -d 35% --preview 'echo ❯ kubectl logs {} api -f' --preview-window down:1 --ansi --reverse --prompt='login pods is '"
+            | "xargs -o -Ipods kubectl logs pods api -f"
         script.exec()
     }
 }
