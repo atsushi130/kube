@@ -29,9 +29,3 @@ func | (lhs: Script, rhs: String) -> Script {
     guard let script = lhs.script else { return Script(rhs) }
     return Script(script + "|" + rhs)
 }
-
-// infix operator &&
-func && (lhs: Script, rhs: String) -> Script {
-    guard let script = lhs.script else { return Script(rhs) }
-    return Script(script + "&&" + rhs)
-}
