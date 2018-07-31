@@ -18,9 +18,13 @@ struct Script {
         self.script = script
     }
     
-    func exec() {
-        guard let script = self.script else { return }
-        Process.launchedProcess(launchPath: "/bin/sh", arguments: ["-c", script]).waitUntilExit()
+    @discardableResult
+    func exec() -> Process? {
+        guard let script = self.script else { return nil }
+        let process = Process.make(script: script)
+        ProcessManager.shared.add(processes: process)
+        process.launchWithWaitUntilExit()
+        return process
     }
 }
 
