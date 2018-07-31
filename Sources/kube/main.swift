@@ -7,4 +7,8 @@
 
 import Foundation
 
+signal(SIGINT) { _ in
+    ProcessManager.shared.terminateAll()
+}
+
 try Kube()?.run()
