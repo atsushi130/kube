@@ -24,6 +24,11 @@
 // gcloud config set project {incremental searched project} && gcloud container clusters get-credentials api-cluster --zone asia-northeast1-a
 ```
 
+```
+❯ kube pods
+// kubectl get pods
+```
+
 ## Installation via Homebrew
 ```
 ❯ brew tap atsushi130/tap
