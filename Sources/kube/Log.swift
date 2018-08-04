@@ -16,6 +16,7 @@ struct Log: Commandy.Command {
             | "grep api-deployment"
             | "fzf-tmux -d 35% --preview 'echo ❯ kubectl logs {} api -f' --preview-window down:1 --ansi --reverse --prompt='monitoring pods is '"
             | "xargs -o -Ipods kubectl logs pods api -f"
+            | "grep -v -e \"Status\" -e \"/status\" -e \"Completed 200 OK\""
         script.exec()
     }
 }
