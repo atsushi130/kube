@@ -1,15 +1,15 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
+#                https://www.rubydoc.info/github/Homebrew/brew/master/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Kube < Formula
-  desc "Incrementally search pods for which kubectl command is to be executed."
-  homepage "https://github.com/atsushi130/kube"
-  url "https://github.com/atsushi130/kube/archive/v1.0.1.tar.gz"
-  sha256 "73d4300de4c0a2001f0edd595f686a7134e79094682e450e00b9f9dcaf34126d"
+  desc ""
+  homepage ""
+  url "https://github.com/atsushi130/kube/archive/v1.1.0.tar.gz"
+  sha256 "98720570909ec3d8548ff55d737a289f320b905bd894eb1ee415f8558506d2f3"
   # depends_on "cmake" => :build
 
   def install
-    bin.install "kube"    
+    bin.install "kube"
   end
 
   test do
