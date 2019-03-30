@@ -7,13 +7,15 @@ enum Kube: String, Commandy.Cli {
     case log
     case config
     case pods
-    
+    case version
+
     func run() throws {
         switch self {
-        case .login:  try Login.run()
-        case .log:    try Log.run()
-        case .config: try Config.run()
-        case .pods:   try Pods.run()
+        case .login:   try Login.run()
+        case .log:     try Log.run()
+        case .config:  try Config.run()
+        case .pods:    try Pods.run()
+        case .version: try Version.run()
         }
     }
 }
