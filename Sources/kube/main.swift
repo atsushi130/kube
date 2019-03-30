@@ -11,4 +11,4 @@ signal(SIGINT) { _ in
     ProcessManager.shared.terminateAll()
 }
 
-try Kube()?.run()
+try Kube().run()
