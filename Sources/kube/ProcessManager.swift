@@ -14,7 +14,7 @@ final class ProcessManager {
     private var processes: [Process] = []
     
     func add(processes: Process?...) {
-        self.processes += processes.flatMap { $0 }
+        self.processes += processes.compactMap { $0 }
     }
     
     func terminateAll() {
